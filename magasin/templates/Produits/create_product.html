@@ -1,0 +1,25 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+<div class="col-md-12 text-center">
+<h2>Ajout Produit</h2>
+</div>
+<form method='POST' class="post-form" style="margin-left: 40px;" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="sumit" class="btn btn-dark">Enregistrer</button>
+</form>
+{% endblock %}
+{% block styles %}
+  <style>
+    body {
+      height: 580px;
+      background-image: url('/static/images/prod.webp');
+      background-size:45%;
+      background-repeat: no-repeat;
+      background-color:#F2F4F4;
+    
+      /* you can adjust the background-position as needed */
+      background-position:right;
+    }
+  </style>
+{% endblock %}

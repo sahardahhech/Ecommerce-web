@@ -1,0 +1,24 @@
+{% extends 'magasin/base.html' %}
+
+{% block content %}
+<form method='POST' class="post-form" >
+{% csrf_token %}
+<div class="container" style="padding-top: 10px; ">
+
+<table style="width: 1400px; ">
+<tr >
+{% for product in list %}
+<td style="padding: 25px; width: 600px;" >
+    <img src="/media/{{product.img}}" style="width: 200px; height: 150px;">
+ <figcaption class="figure-caption"> {{product.libellé}} </figcaption>
+</p> <p> {{product.prix}} DT. </p>
+<a href="{% url 'detail_product' product_id=product.id %}" class="btn btn-primary">Voir détails</a>
+<a href="{% url 'edit_product' product.id %}" class="btn btn-success">Modifier</a>
+<a href="{% url 'delete_product' product.id %}" class="btn btn-danger" >Supprimer</a>
+
+ </td> {% endfor %} 
+</tr> 
+</table>
+</div>
+ </form> 
+</div> {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'basee.html' %}
+{% block title %}
+Modifier une tâche | 
+{% endblock title %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="text-center">ToDo App</h1>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <div id="completed" class="input-group-text" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tâche réalisée">
+                    {{edit_task_form.completed}}
+                </div>
+                {{edit_task_form.title}}
+                <button type="submit" class="btn btn-lg btn-info">Modifier</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

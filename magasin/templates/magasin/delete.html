@@ -1,0 +1,24 @@
+{% extends 'basee.html' %}
+{% block title %}
+Supprimer une tâche | 
+{% endblock title %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1 class="text-center">ToDo App</h1>
+    </div>
+    <div class="card-body">
+    	<h4>Veux-tu supprimer la tâche : <strong>{{task}}</strong>?</h4>
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-inline-block">
+    		<a href="{%url 'index'%}" class="btn btn-lg btn-secondary"> Annuler</a>
+    		</div>
+            <div class="d-inline-block">            	
+            		<input type="submit" class="btn btn-lg btn-danger" value="Confirmer">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

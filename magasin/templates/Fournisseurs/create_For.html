@@ -1,0 +1,25 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+<div class="col-md-12 text-center">
+<h2>Ajout Fournisseur </h2>
+</div>
+<form method='POST' class="post-form" style="margin-left: 40px;" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-dark">Enregistrer</button>
+</form>
+{% endblock %}
+{% block styles %}
+  <style>
+    body {
+     
+      background-image: url('/static/images/f.jfif');
+      background-size:40%;
+      background-repeat: no-repeat;
+     
+    
+      /* you can adjust the background-position as needed */
+      background-position:center;
+    }
+  </style>
+{% endblock %}

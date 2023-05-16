@@ -1,0 +1,46 @@
+{% extends "magasin/base.html" %}
+
+{% block content  %}
+<div style="margin-left: 500px; margin-top: 50px;">
+<h2>Se connecter </h2>
+<div>
+<form method="post" >
+{% csrf_token %}
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="alert alert-danger">{{ error }}</p>
+
+
+
+{% endfor %}
+{% endif %}
+<table >
+{% for field in form %}
+<tr >
+<td >{{ field.label_tag }}</td>
+<td>{{ field }}</td>
+</tr>
+
+{% endfor %}
+</table>
+<button class="btn btn-primary " style=" margin: 5px; margin-left: 110px;" type="submit">se connecter</button>
+</form>
+</div>
+
+<div>
+<small>
+Pas encore inscrite? <a href="{% url 'register' %}"> S'inscrire </a>
+
+</small>
+</div>
+</div>
+{% endblock %}
+{% block styles %}
+  <style>
+    body {
+    
+      background-color:#F2F4F4;
+    
+    }
+  </style>
+{% endblock %}
